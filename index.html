@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REACT</title>
+</head>
+<body>
+    <H1>Tutorial: Intro to React</H1>
+    <div>
+        <p>This tutorial doesn’t assume any existing React knowledge.</p>
+        <h3>Before We Start the Tutorial</h3>
+        <p>We will build a small game during this tutorial. </p><h4>You might be tempted to skip it because you’re not building games — but give it a chance. </h4><p>The techniques you’ll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.</p>
+        <blockquote> 
+            <p>TIP</p>
+            <p>
+                "This tutorial is designed for people who prefer to "
+                <strong> learn by doing. </strong>
+                " If you prefer learning concepts from the ground up, check out our"
+                <a href="/docs/hello-world.html">step-by-step</a> 
+                "You might find this tutorial and the guide complementary to each other."
+</p>
+</blockquote>
+<p>The tutorial is divided into several sections:</p>
+<ul>
+    <li>
+        <a href="#setup-for-the-tutorial">setup for the tutorial</a>
+        "will give you"
+        <strong>a straight point</strong>
+        "to follow the tutorial."
+    </li>
+    <li>
+        <a href="#overview">overview</a>
+        "will teach you"
+        <strong>the fundamentals</strong>
+        "of React: components, props, and state."
+    </li>
+<li>
+    <a href="#completing-the-game">will teach you </a>
+    <strong>the most common techniques </strong>
+    " in React development."
+</li>
+<li>
+    <a href="#adding-time-travel">will give you a</a>
+    <strong> a deeper insight</strong>
+    "into the unique strengths of React."
+</li>
+</ul>
+<p>
+    You don’t have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can — even if it’s one or two sections.
+</p>
+<h3>What Are We Building?</h3>
+<p>In this tutorial, we’ll show how to build an interactive tic-tac-toe game with React.</p>
+<p>You can see what we’ll be building here:</p>
+<strong>
+    <a href="https://codepen.io/gaearon/pen/gWWZgR?editors=0010">final result</a>
+   </strong>
+    <p>If the code doesn’t make sense to you, or if you are unfamiliar with the code’s syntax, don’t worry! The goal of this tutorial is to help you understand React and its syntax.</p>
+    <p>We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you’ll notice is that there is a numbered list to the right of the game’s board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.</p>
+    <p>You can close the tic-tac-toe game once you’re familiar with it. We’ll be starting from a simpler template in this tutorial. Our next step is to set you up so that you can start building the game. </p>
+<h3 id="prerequisites">
+  "Prerequisites"
+</h3>
+<p>We’ll assume that you have some familiarity with HTML and JavaScript, but you should be able to follow along even if you’re coming from a different programming language. We’ll also assume that you’re familiar with programming concepts like functions, objects, arrays, and to a lesser extent, classes.</p>
+<p>
+    "If you need to review JavaScript, we recommend reading"
+<a href="https://reactjs.org/tutorial/tutorial.html#what-are-we-building">this guide</a>
+"Note that we’re also using some features from ES6 — a recent version of JavaScript. In this tutorial, we’re using"
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow functions</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">classes</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let</a>
+"and"
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">const</a>
+"statements. You can use the "
+<a href="https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&spec=false&loose=false&code_lz=MYewdgzgLgBApgGzgWzmWBeGAeAFgRgD4AJRBEAGhgHcQAnBAEwEJsB6AwgbgChRJY_KAEMAlmDh0YWRiGABXVOgB0AczhQAokiVQAQgE8AkowAUAcjogQUcwEpeAJTjDgUACIB5ALLK6aRklTRBQ0KCohMQk6Bx4gA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=react&prettier=false&targets=&version=7.9.6&externalPlugins=">Babel REPL</a>
+"to check what ES6 code compiles to."
+</p>
+<h2 id="Setup for the Tutorial">
+    <a href="l#setup-for-the-tutorial">Setup for the Tutorial</a>
+</h2>
+<p>There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
+</p>
+<h3 id="setup-option-1-write-code-in-the-browser">
+    "Setup Option 1: Write Code in the Browser"
+</h3>
+<p>This is the quickest way to get started!</p>
+<p>
+    "First, open this"
+    <strong>
+        <a href="https://codepen.io/gaearon/pen/oWWQNa?editors=0010">starter code</a>
+    </strong>
+"in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial."
+</p>
+<p>"You can now skip the second setup option, and go to the"
+    <strong>
+        <a href="#overview">overview</a>
+    </strong>
+    "section to get an overview of React."
+</p>
+<h3 id="setup-option-2-local-development-environment">"Setup Option 2: Local Development Environment"
+</h3>
+<p>This is completely optional and not required for this tutorial!</p>
+<br>
+<details>
+    <summary>
+        <b>
+            "Optional: Instructions for following along locally using your preferred text editor "</b>
+            </summary>
+    <p>
+        "This setup requires more work but allows you to complete the tutorial using an editor of your choice. Here are the steps to follow:"
+    </p>
+    <ol>
+        <li>
+            "Make sure you have a recent version of"
+           <a href="https://reactjs.org/tutorial/tutorial.html#what-are-we-building" >
+        Node.js> "installed"</a>
+        </li>
+        <li>
+            "Follow the"
+            <a href="https://reactjs.org/tutorial/tutorial.html#what-are-we-building">installation instructions for Create React App </a>
+"to make a new project."
+        </li>
+    </ol>
+    <div>
+       <code> "npx create-react-app my-app"</code>
+    </div>
+    <ol start="3">
+        <li>
+            <p> "Delete all files in the"
+            <code>
+               src
+            </code>
+           "folder of the new project"
+           </p>
+        </li>
+ </ol>
+<blockquote>
+    <p>Note:</p>
+    <p>
+        <strong>
+            "Don’t delete the entire "
+            <code>src</code>
+            " folder, just the original source files inside it."
+        </strong>
+        " We’ll replace the default source files with examples for this project in the next step."
+    </p>
+</blockquote>
+<div>
+    <code>
+        cd my-app  <br>
+cd src  <br>
+
+# If you're using a Mac or Linux:  <br>
+rm -f *  <br>
+
+# Or, if you're on Windows:  <br>
+del *  <br>
+
+# Then, switch back to the project folder  <br>
+cd ..
+    </code>
+</div>
+</details>
+<div class="css-1m173d1">
+    <a href="https://github.com/reactjs/reactjs.org/blob/master/content/tutorial/tutorial.md">
+    Edit this page</a>
+</div>
+
+<img src="devtools.png" alt="devtools"> <br>
+
+<img src="Capture.PNG" alt="footer">
+</body>
+</html>
